@@ -17,32 +17,25 @@ public class Registration : MonoBehaviour
     IEnumerator Register()
     {
         WWWForm form = new WWWForm();
-        form.AddField("name", nameField.text);
+        form.AddField("username", nameField.text);
         form.AddField("password", passwordField.text);
-        string url = "http://localhost/sqlconnect/register.php";
+        //string url = "http://localhost/sqlconnect/register.php";
      
-        Debug.Log("this is name" + nameField.text);
-        Debug.Log("this is password " + passwordField.text);
 
-        var postRequest = UnityWebRequest.Post(url, form);
-        Debug.Log(postRequest);
+        var postRequest = UnityWebRequest.Post("http://localhost/sqlconnect/register.php", form);
+        Debug.Log("this is thes post request" + postRequest);
         //UnityWebRequest www = UnityWebRequest.Post(url, form);
-        yield return postRequest.SendWebRequest();
-
-        //WWW www = new WWW(url, form);
-        //    yield return www;
-        //if(www.text == "0")
-        //if (string.IsNullOrEmpty(www.error))
-
-        //if (!www.isNetworkError || !www.isHttpError)
-        if(!postRequest.isNetworkError || !postRequest.isHttpError)
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost/sqlconnect/register.php", form);
+        //yield return postRequest.SendWebRequest();
+        yield return www.SendWebRequest();
+        if (!postRequest.isNetworkError || !postRequest.isHttpError)
         {
-            //Debug.Log("user created successfully" + www);
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            Debug.Log("this is name" + nameField.text + passwordField.text);
         }
         else
         {
-            //Debug.Log("this was not successful. Error" + www);
+            Debug.Log("this was not successful. Error" + www);
         }
     }
     public void VerifyInputs()
