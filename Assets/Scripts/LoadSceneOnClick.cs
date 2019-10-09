@@ -7,15 +7,17 @@ using UnityEngine.UI;
 public class LoadSceneOnClick : MonoBehaviour
 {
     public Text playerDisplay;
-    private void Start()
-    {
-        if (DBManager.LoggedIn)
-        {
-            playerDisplay.text = "Player:" + DBManager.username;
-        }
-    }
+    //private void Start()
+    //{
+    //    if (DBManager.LoggedIn)
+    //    {
+    //        playerDisplay.text = "Player:" + DBManager.username;
+    //    }
+    //}
+
     public void LoadByIndex(int sceneIndex)
     {
+        Debug.Log(sceneIndex);
         SceneManager.LoadScene(sceneIndex);
     }
 }
