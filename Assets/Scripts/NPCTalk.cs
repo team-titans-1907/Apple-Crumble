@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class NPCTalk : MonoBehaviour
 {
-
-    void Start()
-    {
-        
-    }
+    public DialogueTrigger trigger;
+    public Animator animator;
 
     void Update()
     {
         if(Input.touchCount > 0)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Stationary)
+            if (Input.GetTouch(0).phase == TouchPhase.Stationary && !animator.GetBool("IsOpen"))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
                 if (Physics.Raycast(ray, out _))
                 {
-                    Debug.Log("hewwo");
+                    trigger.TriggerDialogue();
                 }
             }
         }
