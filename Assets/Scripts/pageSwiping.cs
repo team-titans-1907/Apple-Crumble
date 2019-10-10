@@ -92,8 +92,7 @@ public class pageSwiping : MonoBehaviour
 
     }
 
-
-    //calculating distance between two vectors -- first touch and last touch
+    //calculating distance between first touch and second touch
     private float calculateSwipeDistance()
     {
         return Mathf.Sqrt(Mathf.Pow(Mathf.Abs(lastTouch.x - firstTouch.x), 2) + Mathf.Pow(Mathf.Abs(lastTouch.y - firstTouch.y), 2));
