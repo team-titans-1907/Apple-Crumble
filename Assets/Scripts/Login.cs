@@ -24,7 +24,7 @@ public class Login : MonoBehaviour
 
 
         var postRequest = UnityWebRequest.Post("http://localhost/sqlconnect/register.php", form);
-        Debug.Log("this is thes post request" + postRequest);
+        Debug.Log("this is the post request" + postRequest);
         //UnityWebRequest www = UnityWebRequest.Post(url, form);
         UnityWebRequest www = UnityWebRequest.Post("http://localhost/sqlconnect/register.php", form);
         //yield return postRequest.SendWebRequest();
