@@ -27,7 +27,7 @@ public class pageSwiping : MonoBehaviour
         counter++;
         Debug.Log("THE CURRENT SCENE IS AT INDEX: " + currentSceneIndex);
 
-        /*finger swiping*/
+        /*for finger swiping*/
 
         //one finger or two finger swipe
         if (Input.touchCount == 1 || Input.touchCount == 2)
@@ -62,7 +62,7 @@ public class pageSwiping : MonoBehaviour
         }
 
 
-        /*mouse drag*/
+        /*for mouse drag*/
 
         //if (Input.GetMouseButtonDown(0)) //for first mouse click
         //{
