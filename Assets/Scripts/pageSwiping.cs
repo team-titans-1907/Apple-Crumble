@@ -29,6 +29,7 @@ public class pageSwiping : MonoBehaviour
 
         /*finger swiping*/
 
+        //one finger or two finger swipe
         if (Input.touchCount == 1 || Input.touchCount == 2)
         {
             Touch touch = Input.GetTouch(0);
@@ -93,7 +94,7 @@ public class pageSwiping : MonoBehaviour
     }
 
 
-    //calculating distance between two coordinates
+    //calculating distance between two vectors -- first touch and last touch
     private float calculateSwipeDistance()
     {
         return Mathf.Sqrt(Mathf.Pow(Mathf.Abs(lastTouch.x - firstTouch.x), 2) + Mathf.Pow(Mathf.Abs(lastTouch.y - firstTouch.y), 2));
@@ -105,17 +106,15 @@ public class pageSwiping : MonoBehaviour
     }
 
 
-    //incrementing or decrementing scene index 
+    //method for incrementing or decrementing scene index 
     private void updateCurrentSceneIndex(bool nextScreen)
     {
-        //add the animator dialogue boolean in the if statement
         if (nextScreen && (currentSceneIndex < totalSceneCount - 1))
         {
             Debug.Log("current scene Index in if: " + currentSceneIndex);
             currentSceneIndex++;
 
         }
-        //add the animator dialogue boolean in this else if statement 
         else if (currentSceneIndex > 0)
         {
             Debug.Log("current scene index in else: " + currentSceneIndex);
