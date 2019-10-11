@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter password...
+  m_Text: PASSWORD...
 --- !u!222 &141825265
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 178.23, y: 0.1}
-  m_SizeDelta: {x: 603.55, y: 179.8}
+  m_SizeDelta: {x: 603.55, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &161256355
 MonoBehaviour:
@@ -295,7 +295,7 @@ MonoBehaviour:
         m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
-  m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
+  m_SelectionColor: {r: 0.9811321, g: 0.7080812, b: 0.7080812, a: 0.7529412}
   m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  m_Color: {r: 0.7254902, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 0.7490196, g: 0.46274513, b: 0.38431376, a: 0.5}
   m_EffectDistance: {x: 3, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &623684246
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  m_Color: {r: 0.6698113, g: 0.009478444, b: 0.009478444, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 0.7735849, g: 0.44152722, b: 0.44152722, a: 0.5}
   m_EffectDistance: {x: 3, y: -1}
   m_UseGraphicAlpha: 0
 --- !u!1 &928665826
@@ -1498,7 +1498,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 178.2, y: 248}
-  m_SizeDelta: {x: 603.5, y: 156}
+  m_SizeDelta: {x: 603.5, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1707363344
 MonoBehaviour:
@@ -1566,7 +1566,7 @@ MonoBehaviour:
         m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
-  m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
+  m_SelectionColor: {r: 0.98039216, g: 0.70980394, b: 0.70980394, a: 0.7529412}
   m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
@@ -1674,7 +1674,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter email...
+  m_Text: EMAIL...
 --- !u!222 &1713826229
 CanvasRenderer:
   m_ObjectHideFlags: 0
