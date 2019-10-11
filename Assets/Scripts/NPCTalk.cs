@@ -7,7 +7,7 @@ public class NPCTalk : MonoBehaviour
     public DialogueTrigger trigger;
     public Animator animator;
 
-    void Update()
+    void FixedUpdate()
     {
         if(Input.touchCount > 0)
         {
