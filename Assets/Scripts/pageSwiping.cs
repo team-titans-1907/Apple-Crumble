@@ -18,14 +18,12 @@ public class pageSwiping : MonoBehaviour
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         totalSceneCount = SceneManager.sceneCountInBuildSettings;
-        Debug.Log("totalSceneCount --> " + totalSceneCount);
     }
 
 
     void Update()
     {
         counter++;
-        Debug.Log("THE CURRENT SCENE IS AT INDEX: " + currentSceneIndex);
 
         /*for swiping*/
 
@@ -46,15 +44,15 @@ public class pageSwiping : MonoBehaviour
                 {
                     if (isSwipeRight())
                     {
-                        Debug.Log("SCENE CHANGE RIGHT");
-                        updateCurrentSceneIndex(true);
+                        //updateCurrentSceneIndex(true);
+                        SceneManager.LoadScene(currentSceneIndex + 1);
                     }
                     else
                     {
-                        Debug.Log("SCENE CHANGE LEFT");
-                        updateCurrentSceneIndex(false);
+                        //updateCurrentSceneIndex(false);
+                        SceneManager.LoadScene(currentSceneIndex - 1);
                     }
-                    SceneManager.LoadScene(currentSceneIndex);
+                    //SceneManager.LoadScene(currentSceneIndex);
                 }
 
             }
@@ -92,16 +90,21 @@ public class pageSwiping : MonoBehaviour
 
     }
 
+
     //calculating distance between first touch and second touch
     private float calculateSwipeDistance()
     {
-        return Mathf.Sqrt(Mathf.Pow(Mathf.Abs(lastTouch.x - firstTouch.x), 2) + Mathf.Pow(Mathf.Abs(lastTouch.y - firstTouch.y), 2));
+        return Mathf.Sqrt(Mathf.Pow(Mathf.Abs(lastTouch.x - firstTouch.x), 2)
+            + Mathf.Pow(Mathf.Abs(lastTouch.y - firstTouch.y), 2));
     }
+
+
 
     private bool isSwipeRight()
     {
-        return firstTouch.x < lastTouch.x;
+        return firstTouch.x > lastTouch.x;
     }
+
 
 
     //method for incrementing or decrementing scene index 
@@ -109,13 +112,11 @@ public class pageSwiping : MonoBehaviour
     {
         if (nextScreen && (currentSceneIndex < totalSceneCount - 1))
         {
-            Debug.Log("current scene Index in if: " + currentSceneIndex);
             currentSceneIndex++;
 
         }
         else if (currentSceneIndex > 0)
         {
-            Debug.Log("current scene index in else: " + currentSceneIndex);
             currentSceneIndex--;
         }
     }
