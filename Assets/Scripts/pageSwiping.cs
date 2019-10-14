@@ -103,7 +103,6 @@ public class pageSwiping : MonoBehaviour
         return firstTouch.x < lastTouch.x;
     }
 
-
     //method for incrementing or decrementing scene index 
     private void updateCurrentSceneIndex(bool nextScreen)
     {
