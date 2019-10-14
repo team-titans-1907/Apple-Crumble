@@ -20,4 +20,8 @@ public class LoadSceneOnClick : MonoBehaviour
         Debug.Log(sceneIndex);
         SceneManager.LoadScene(sceneIndex);
     }
+    public void LoadByName(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

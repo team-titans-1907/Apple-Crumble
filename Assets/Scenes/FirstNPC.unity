@@ -545,6 +545,7 @@ MonoBehaviour:
   name: {fileID: 1899426866}
   dialogue: {fileID: 934282385}
   npc: {fileID: 1467171009}
+  npcState: 
   animator: {fileID: 364279097}
   startDialogue:
     name: 
@@ -1095,14 +1096,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 800456419}
-        m_MethodName: LoadByIndex
-        m_Mode: 3
+        m_MethodName: LoadByName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: QuestRejected
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &800456417
@@ -1844,6 +1845,7 @@ MonoBehaviour:
     - BOY DO I ENVY KIDS LIKE YOU. WALKIN' AROUND WITHOUT A CARE IN THE WORLD. NO
       JOB TO HOLD YA DOWN...
     - SAY, SINCE YOU'RE FREE, DO YOU WANNA DO ME A HUGE FAVOR?
+  npcState: 
 --- !u!1 &1899426865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,14 +2004,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2137268948}
-        m_MethodName: LoadByIndex
-        m_Mode: 3
+        m_MethodName: LoadByName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 6
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: QuestAccepted
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2137268946
