@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class pageSwiping : MonoBehaviour
+public class PageSwiping : MonoBehaviour
 {
     public Vector3 firstTouch;
     public Vector3 lastTouch;
