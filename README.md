@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://png.pngtree.com/element_our/png/20181227/apple-vector-icon-png_293587.jpg" alt="apple-crumble" width="200"></a>
+  <a href="https://www.trzcacak.rs/myfile/detail/7-79704_png-snow-white-silhouette-at-getdrawings-com-free.png" alt="apple-crumble" width="200"></a>
   <br>
   Apple Crumble
   <br>
