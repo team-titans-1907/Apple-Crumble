@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
 
-    public Text name;
+    public new Text name;
     public Text dialogue;
 
     public Image npc;
+    public string npcState;
 
     public Animator animator;
 
@@ -29,7 +30,7 @@ public class DialogueManager : MonoBehaviour
         lines = new Queue<string>();
         activeScene = SceneManager.GetActiveScene();
 
-        if(activeScene.name == "FirstNPC" || activeScene.name == "QuestRejected")
+        if (activeScene.name == "FirstNPC" || activeScene.name == "QuestRejected")
         {
             acceptButton = GameObject.Find("AcceptButton");
             rejectButton = GameObject.Find("RejectButton");
@@ -41,16 +42,25 @@ public class DialogueManager : MonoBehaviour
         if (activeScene.name != "FirstNPC")
         {
             talkedTo = false;
-            StartSpeak(startDialogue);
+            StartSpeak(startDialogue, npcState);
         }
     }
 
-    public void StartSpeak (Dialogue dialogue)
+    public void StartSpeak (Dialogue dialogue, string npcState)
     {
-        if(!animator.GetBool("IsOpen"))
+        if (!animator.GetBool("IsOpen"))
         {
             animator.SetBool("IsOpen", true);
         }
+
+        Animator npcAnim = npc.GetComponent<Animator>();
+
+        foreach (AnimatorControllerParameter param in npcAnim.parameters)
+        {
+            npcAnim.SetBool(param.name, false);
+        }
+
+        npcAnim.SetBool(npcState, true);
 
         name.text = dialogue.name;
         npc.sprite = dialogue.talksprite;
@@ -67,7 +77,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextLine()
     {
-        if(lines.Count == 0)
+        if (lines.Count == 0)
         {
             if (activeScene.name == "FirstNPC")
             {
@@ -75,15 +85,15 @@ public class DialogueManager : MonoBehaviour
                 rejectButton.SetActive(true);
                 return;
             }
-            if(activeScene.name != "FirstNPC")
+            if (activeScene.name != "FirstNPC")
             {
-                if(!talkedTo)
+                if (!talkedTo)
                 {
                     talkedTo = true;
                     EndSpeak();
                     return;
                 }
-                if(talkedTo && activeScene.name == "QuestRejected")
+                if (talkedTo && activeScene.name == "QuestRejected")
                 {
                     acceptButton.SetActive(true);
                     rejectButton.SetActive(true);

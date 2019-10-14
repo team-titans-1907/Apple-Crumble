@@ -5,16 +5,29 @@ using UnityEngine.UI;
 
 public class IconHints : MonoBehaviour
 {
-    public GameObject Panel;
-    public void OpenPanel()
+    public GameObject panel;
+    public GameObject otherPanel;
+    public GameObject anotherPanel;
+    public Animator animator;
+
+    private void Update()
     {
-        if (Panel != null)
+        if(animator.GetBool("IsOpen"))
         {
-            bool isActive = Panel.activeSelf;
-            Panel.SetActive(!isActive);
-            GetComponent<Image>().color = Color.white;
+            panel.SetActive(false);
         }
-      
+    }
+
+    public void TogglePanel()
+    {
+        otherPanel.SetActive(false);
+        anotherPanel.SetActive(false);
+        Image icon = GetComponent<Image>();
+        if(icon.color != Color.white && !animator.GetBool("IsOpen"))
+        {
+            bool isActive = panel.activeSelf;
+            panel.SetActive(!isActive);
+        }
     }
     
 }

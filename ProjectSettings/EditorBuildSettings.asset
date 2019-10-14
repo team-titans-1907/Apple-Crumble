@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuestStatus.unity
     guid: d8b8fdac8ab7e4a23b27c9214ffb2e6c
+  - enabled: 1
+    path: Assets/Scenes/QuestPending.unity
+    guid: 84d7d9b8a7df44fd281aa9c77ea7cdad
+  - enabled: 1
+    path: Assets/Scenes/QuestComplete.unity
+    guid: defdc029a667944909d09ec1ccee68bb
   m_configObjects: {}

@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
 
-public class ItemFound : MonoBehaviour, ITrackableEventHandler
+public class ItemFound: MonoBehaviour, ITrackableEventHandler
 {
+    public Animator animator;
+    public DialogueTrigger trigger;
+
     private TrackableBehaviour mTrackableBehaviour;
     private bool hasFound;
-    private GameObject tiger;
-    private UnityEngine.UI.Image tigerImage;
+    private GameObject npcItem;
+    private UnityEngine.UI.Image npcImage;
 
     void Start()
     {
@@ -17,8 +20,6 @@ public class ItemFound : MonoBehaviour, ITrackableEventHandler
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         hasFound = false;
-        tiger = GameObject.Find("Item1");
-        tigerImage = tiger.GetComponent<UnityEngine.UI.Image>();
     }
 
     void OnDestroy()
@@ -57,7 +58,20 @@ public class ItemFound : MonoBehaviour, ITrackableEventHandler
 
     void OnTrackingFound()
     {
-        if (mTrackableBehaviour)
+        if (mTrackableBehaviour.TrackableName == "spades")
+        {
+            npcItem = GameObject.Find("Item1");
+        }
+        if (mTrackableBehaviour.TrackableName == "chipotle")
+        {
+            npcItem = GameObject.Find("Item2");
+        }
+
+        if (mTrackableBehaviour.TrackableName == "joker")
+        {
+            npcItem = GameObject.Find("Item3");
+        }
+        if (mTrackableBehaviour && !animator.GetBool("IsOpen"))
         {
             var rendererComponents = mTrackableBehaviour.GetComponentsInChildren<Renderer>(true);
             var colliderComponents = mTrackableBehaviour.GetComponentsInChildren<Collider>(true);
@@ -75,10 +89,16 @@ public class ItemFound : MonoBehaviour, ITrackableEventHandler
             foreach (var component in canvasComponents)
                 component.enabled = true;
 
-            if(!hasFound)
+            if (!hasFound)
             {
+                npcImage = npcItem.GetComponent<UnityEngine.UI.Image>();
+                npcImage.color = Color.white;
+
+                npcItem.BroadcastMessage("TogglePanel");
+
                 hasFound = true;
-                tigerImage.color = Color.white;
+                trigger.TriggerDialogue();
+                FindObjectOfType<QuestManager>().CheckStatus();
             }
         }
     }

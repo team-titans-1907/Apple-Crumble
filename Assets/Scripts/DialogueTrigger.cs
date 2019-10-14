@@ -5,9 +5,10 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public string npcState;
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartSpeak(dialogue);
+        FindObjectOfType<DialogueManager>().StartSpeak(dialogue, npcState);
     }
 }

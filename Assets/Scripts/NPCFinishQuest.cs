@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class NPCTalk : MonoBehaviour
+public class NPCFinishQuest : MonoBehaviour
 {
     public DialogueTrigger trigger;
     public Animator animator;
@@ -14,7 +15,7 @@ public class NPCTalk : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out _))
             {
-                trigger.TriggerDialogue();
+                SceneManager.LoadScene("QuestComplete");
             }
         }
 
