@@ -23,4 +23,4 @@ C#, Unity (game engine), Vuforia, PHP, MySQL
 Kat Le, Lisa Jo, Shirin Setayesh
 
 ## Presentation
-Watch the presentation and walk through —here (link) —!
+Watch the presentation and walk through of our game <a href = "#"> here </a>
