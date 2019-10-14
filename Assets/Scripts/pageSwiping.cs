@@ -106,6 +106,7 @@ public class pageSwiping : MonoBehaviour
     }
 
 
+
     private void updateCurrentSceneIndex(bool nextScreen)
     {
         if (nextScreen && (currentSceneIndex < totalSceneCount - 1))
