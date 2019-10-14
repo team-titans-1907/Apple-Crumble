@@ -106,8 +106,6 @@ public class pageSwiping : MonoBehaviour
     }
 
 
-
-    //method for incrementing or decrementing scene index 
     private void updateCurrentSceneIndex(bool nextScreen)
     {
         if (nextScreen && (currentSceneIndex < totalSceneCount - 1))
