@@ -1,5 +1,3 @@
-# Apple-Crumble
-
 <h1 align="center">
 <br align="center">
   <img src = "https://www.clipartwiki.com/clipimg/detail/23-234915_fruits-apple-fruit-clipart.png" width=200/>
