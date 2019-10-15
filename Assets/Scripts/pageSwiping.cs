@@ -8,7 +8,7 @@ public class PageSwiping : MonoBehaviour
     private Vector3 firstTouch;
     private Vector3 lastTouch;
 
-    private bool isBadges;
+    private bool isBadge;
     private bool isLog;
 
     //minimum length of swipe for the swipe to register
@@ -16,7 +16,7 @@ public class PageSwiping : MonoBehaviour
 
     void Start()
     {
-        isBadges = false;
+        isBadge = false;
         isLog = false;
     }
 
@@ -41,18 +41,18 @@ public class PageSwiping : MonoBehaviour
                     {
                         ReturnToGame("QuestLog");
                     }
-                    else
+                    else if(!isBadge)
                     {
-                        GameToBadges();
+                        GameToBadge();
                     }
                 }
                 else
                 {
-                    if (isBadges)
+                    if (isBadge)
                     {
                         ReturnToGame("BadgeBox");
                     }
-                    else
+                    else if(!isLog)
                     {
                         GameToLog();
                     }
@@ -76,9 +76,9 @@ public class PageSwiping : MonoBehaviour
     }
 
     //goes to badge box
-    private void GameToBadges()
+    private void GameToBadge()
     {
-        isBadges = true;
+        isBadge = true;
         SceneManager.LoadSceneAsync("BadgeBox", LoadSceneMode.Additive);
     }
 
@@ -93,7 +93,7 @@ public class PageSwiping : MonoBehaviour
     private void ReturnToGame(string sceneName)
     {
         SceneManager.UnloadSceneAsync(sceneName);
-        isBadges = false;
+        isBadge = false;
         isLog = false;
     }
 }
