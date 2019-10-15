@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class NPCFinishQuest : MonoBehaviour
 {
-    public DialogueTrigger trigger;
     public Animator animator;
 
     private void Update()

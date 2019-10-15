@@ -97,9 +97,11 @@ public class ItemFound: MonoBehaviour, ITrackableEventHandler
                 npcItem.BroadcastMessage("TogglePanel");
 
                 hasFound = true;
+
                 trigger.TriggerDialogue();
-                FindObjectOfType<QuestManager>().CheckStatus();
+                FindObjectOfType<QuestManager>().UpdateStatus();
             }
+
         }
     }
 
