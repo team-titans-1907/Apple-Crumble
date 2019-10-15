@@ -3,90 +3,62 @@ using UnityEngine.SceneManagement;
 
 public class PageSwiping : MonoBehaviour
 {
-    public Vector3 firstTouch;
-    public Vector3 lastTouch;
-    public Vector3 userSwipe;
-    private int currentSceneIndex = 0;
-    private int totalSceneCount = 0;
-    private static int counter = 0;
+    public Animator animator;
+
+    private Vector3 firstTouch;
+    private Vector3 lastTouch;
+
+    private bool isBadges;
+    private bool isLog;
 
     //minimum length of swipe for the swipe to register
-    private static float lengthOfSwipe = Screen.height * ((float)15.0 / 100);
+    private static readonly float lengthOfSwipe = Screen.height * ((float)15.0 / 100);
 
     void Start()
     {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        totalSceneCount = SceneManager.sceneCountInBuildSettings;
+        isBadges = false;
+        isLog = false;
     }
 
 
     void Update()
     {
-        counter++;
-
-        /*for swiping*/
-
-        if (Input.touchCount == 1)
+        if (Input.GetMouseButtonDown(0)) //for first mouse click
         {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
+            firstTouch = Input.mousePosition;
+        }
+
+        else if (Input.GetMouseButtonUp(0))
+        {
+            lastTouch = Input.mousePosition;
+
+
+            if (calculateSwipeDistance() >= lengthOfSwipe && !animator.GetBool("IsOpen"))
             {
-                firstTouch = touch.position;
-            }
-            else if (touch.phase == TouchPhase.Ended)
-            {
-
-                lastTouch = touch.position;
-
-
-                if (calculateSwipeDistance() >= lengthOfSwipe)
+                if (isSwipeRight())
                 {
-                    if (isSwipeRight())
+                    if (isLog)
                     {
-                        //updateCurrentSceneIndex(true);
-                        SceneManager.LoadScene(currentSceneIndex + 1);
+                        ReturnToGame("QuestLog");
                     }
                     else
                     {
-                        SceneManager.LoadScene(currentSceneIndex - 1);
-                        //updateCurrentSceneIndex(false);
-
+                        GameToBadges();
                     }
-                    //SceneManager.LoadScene(currentSceneIndex);
                 }
-
+                else
+                {
+                    if (isBadges)
+                    {
+                        ReturnToGame("BadgeBox");
+                    }
+                    else
+                    {
+                        GameToLog();
+                    }
+                }
             }
         }
-
-
-        /*for mouse drag*/
-
-        //if (Input.GetMouseButtonDown(0)) //for first mouse click
-        //{
-        //    firstTouch = Input.mousePosition;
-        //}
-
-        //else if (Input.GetMouseButtonUp(0)) 
-        //{
-        //    lastTouch = Input.mousePosition;
-
-
-        //    if (calculateSwipeDistance() >= lengthOfSwipe)
-        //    {
-        //        if (isSwipeRight())
-        //        {
-        //            Debug.Log("SCENE CHANGE RIGHT!");
-        //            updateCurrentSceneIndex(true);       
-        //        }
-        //        else
-        //        {
-        //            Debug.Log("SCENE CHANGE LEFT!");
-        //            updateCurrentSceneIndex(false);
-
-        //        }
-        //        SceneManager.LoadScene(currentSceneIndex);
-        //    }
-        //}
 
     }
 
@@ -97,24 +69,31 @@ public class PageSwiping : MonoBehaviour
             + Mathf.Pow(Mathf.Abs(lastTouch.y - firstTouch.y), 2));
     }
 
-    //only compare x value -- horizontal line
+    //compares x values
     private bool isSwipeRight()
     {
         return firstTouch.x < lastTouch.x;
     }
 
-
-    //method for incrementing or decrementing scene index 
-    private void updateCurrentSceneIndex(bool nextScreen)
+    //goes to badge box
+    private void GameToBadges()
     {
-        if (nextScreen && (currentSceneIndex < totalSceneCount - 1))
-        {
-            currentSceneIndex++;
+        isBadges = true;
+        SceneManager.LoadSceneAsync("BadgeBox", LoadSceneMode.Additive);
+    }
 
-        }
-        else if (currentSceneIndex > 0)
-        {
-            currentSceneIndex--;
-        }
+    //goes to quest log
+    private void GameToLog()
+    {
+        isLog = true;
+        SceneManager.LoadSceneAsync("QuestLog", LoadSceneMode.Additive);
+    }
+
+    //returns to game screen
+    private void ReturnToGame(string sceneName)
+    {
+        SceneManager.UnloadSceneAsync(sceneName);
+        isBadges = false;
+        isLog = false;
     }
 }
