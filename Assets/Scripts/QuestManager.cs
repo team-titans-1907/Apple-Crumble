@@ -45,7 +45,7 @@ public class QuestManager : MonoBehaviour
         return;
     }
 
-    public bool CheckStatus()
+    private bool CheckStatus()
     {
         return questCompleted;
     }
