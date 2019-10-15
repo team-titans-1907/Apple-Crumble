@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-using System.Text.RegularExpressions;
 
 
 public class Login : MonoBehaviour
@@ -28,7 +27,6 @@ public class Login : MonoBehaviour
         var postRequest = UnityWebRequest.Post("http://localhost/sqlconnect/register.php", form);
         Debug.Log("this is the post request" + postRequest);
         UnityWebRequest www = UnityWebRequest.Post("http://localhost/sqlconnect/register.php", form);
-        //yield return postRequest.SendWebRequest();
         yield return www.SendWebRequest();
         if (!postRequest.isNetworkError || !postRequest.isHttpError)
         {
@@ -41,7 +39,7 @@ public class Login : MonoBehaviour
             Debug.Log("login fail. Error #");
         }
     }
-    public void VerifyInputs(){
+    public void VerifyInputs() { 
         submitButton.interactable = (nameField.text.Length >= 4 && passwordField.text.Length >= 4);
 
     }
