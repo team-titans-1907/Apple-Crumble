@@ -9,10 +9,9 @@
 <h4 align="center">An Augmented Reality Scavenger Hunt App </h4>
 
 ## Table of Contents
-- [About](#About)
-- [Build Process](#build-process)
-- [Technologies](#Technologies)
-- [Authors](#Created-by)
+- [About](#about)
+- [Technologies](#technologies)
+- [Authors](#created-by)
 - [Build Process](#build-process)
 - [Presentation](#presentation)
 
