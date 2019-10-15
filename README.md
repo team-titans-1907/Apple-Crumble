@@ -10,9 +10,9 @@
 
 ## Table of Contents
 - [About](#about)
+- [Build Process](#build-process)
 - [Technologies](#technologies)
 - [Authors](#created-by)
-- [Build Process](#build-process)
 - [Presentation](#presentation)
 
 ## About
