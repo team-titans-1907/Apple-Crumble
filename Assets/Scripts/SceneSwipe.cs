@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PageSwiping : MonoBehaviour
+public class SceneSwipe : MonoBehaviour
 {
     public Animator animator;
 
