@@ -10,9 +10,13 @@ public class Registration : MonoBehaviour
 {
     public InputField nameField;
     public InputField passwordField;
+    public InputField passwordVerifyField;
+    public InputField handlerField;
     public Button submitButton;
     public GameObject emailValidator;
     public GameObject pwValidator;
+    public GameObject handlerValidator;
+    public GameObject pwVerificationValidator;
     public const string MatchEmailPattern =
         @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
         + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
@@ -27,9 +31,11 @@ public class Registration : MonoBehaviour
     IEnumerator Register()
     {
         WWWForm form = new WWWForm();
-        form.AddField("username", nameField.text);
+        form.AddField("email", nameField.text);
+        form.AddField("handler", handlerField.text);
         form.AddField("password", passwordField.text);
-     
+        form.AddField("passwordCheck", passwordVerifyField.text);
+
 
         var postRequest = UnityWebRequest.Post("http://localhost/sqlconnect/register.php", form);
         Debug.Log("this is thes post request" + postRequest);
@@ -48,8 +54,14 @@ public class Registration : MonoBehaviour
     public void VerifyInputs()
     {
         emailValidator.SetActive(false);
+        handlerValidator.SetActive(false);
         pwValidator.SetActive(false);
-        if(passwordField.text.Length < 4){
+        pwVerificationValidator.SetActive(false);
+        if(passwordField.text != passwordVerifyField.text)
+        {
+            pwVerificationValidator.SetActive(true);
+        }
+        if (passwordField.text.Length < 4){
             pwValidator.SetActive(true);
         }
         if (Regex.IsMatch(nameField.text, MatchEmailPattern) == false)
