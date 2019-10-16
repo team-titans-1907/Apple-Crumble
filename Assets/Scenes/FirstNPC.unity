@@ -635,7 +635,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667816251}
-  m_Mesh: {fileID: 1743774968}
+  m_Mesh: {fileID: 1416493902}
 --- !u!23 &667816253
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -653,7 +653,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2140661414}
+  - {fileID: 789670516}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -732,6 +732,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &789670516
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'heartsMaterial
+
+    131340'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 920f7e2ec92a402fb345516beb6a717e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &800456414
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,25 +979,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1467171009 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6267407201526277305, guid: 30705a749cf1043f7b61e1db8f7ed6cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 6267407200671605880}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!43 &1743774968
+--- !u!43 &1416493902
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh15972
+  m_Name: ImageTargetMesh131330
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1123,6 +1139,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1467171009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6267407201526277305, guid: 30705a749cf1043f7b61e1db8f7ed6cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6267407200671605880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1897068046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1396,34 +1424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f3c80d799804d4dbf56ec1b3f9e3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &2140661414
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'heartsMaterial
-
-    35774'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d0afe72e49e64226a326e1348d892d0e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1001 &1132467670045053117
 PrefabInstance:
   m_ObjectHideFlags: 0

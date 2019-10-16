@@ -58,7 +58,7 @@ public class ItemFound: MonoBehaviour, ITrackableEventHandler
 
     void OnTrackingFound()
     {
-        if (mTrackableBehaviour.TrackableName == "spades")
+        if (mTrackableBehaviour.TrackableName == "toycar")
         {
             npcItem = GameObject.Find("Item1");
         }
