@@ -13,7 +13,7 @@ public class BadgeBehavior : MonoBehaviour
 		activeScene = SceneManager.GetActiveScene();
 		if (activeScene.name != "QuestComplete")
 		{
-            GameObject badge = GameObject.Find("Badge");
+            GameObject badge = GameObject.Find("BadgeOne");
             if (badge)
             {
                 badge.SetActive(false);
