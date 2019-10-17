@@ -18,20 +18,20 @@ EditorBuildSettings:
     path: Assets/Scenes/NewGame.unity
     guid: 750c0e59eaf8e410b9c60cc3661b6b04
   - enabled: 1
+    path: Assets/Scenes/BadgeBox.unity
+    guid: d9aa3e045d06f4f05a3773e7fd9ba192
+  - enabled: 1
+    path: Assets/Scenes/QuestLog.unity
+    guid: d8b8fdac8ab7e4a23b27c9214ffb2e6c
+  - enabled: 1
     path: Assets/Scenes/FirstNPC.unity
     guid: 6e9ad00ae4f444424b55ae4fd34eea4c
   - enabled: 1
     path: Assets/Scenes/QuestRejected.unity
     guid: 7449ae9de361442e9a7e03c470c0e711
   - enabled: 1
-    path: Assets/Scenes/BadgeBox.unity
-    guid: d9aa3e045d06f4f05a3773e7fd9ba192
-  - enabled: 1
     path: Assets/Scenes/QuestAccepted.unity
     guid: 965852794e10d45feb6734b5883fe8db
-  - enabled: 1
-    path: Assets/Scenes/QuestLog.unity
-    guid: d8b8fdac8ab7e4a23b27c9214ffb2e6c
   - enabled: 1
     path: Assets/Scenes/QuestPending.unity
     guid: 84d7d9b8a7df44fd281aa9c77ea7cdad

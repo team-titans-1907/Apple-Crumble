@@ -22,6 +22,12 @@ public class IconHints : MonoBehaviour
     {
         otherPanel.SetActive(false);
         anotherPanel.SetActive(false);
+        GameObject help = GameObject.Find("HelpPanel");
+        if(help)
+        {
+            help.SetActive(false);
+        }
+
         Image icon = GetComponent<Image>();
         if(icon.color != Color.white && !animator.GetBool("IsOpen"))
         {

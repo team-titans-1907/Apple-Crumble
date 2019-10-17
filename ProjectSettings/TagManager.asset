@@ -5,9 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
-  - First
-  - Second
-  - Third
+  - Hint
   layers:
   - Default
   - TransparentFX
