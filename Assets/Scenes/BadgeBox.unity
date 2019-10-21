@@ -2798,7 +2798,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 12345678901234
+  m_Text: commanderkat
 --- !u!222 &1747160733
 CanvasRenderer:
   m_ObjectHideFlags: 0

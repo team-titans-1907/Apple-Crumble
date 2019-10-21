@@ -67,7 +67,7 @@ public class ItemFound: MonoBehaviour, ITrackableEventHandler
             npcItem = GameObject.Find("Item2");
         }
 
-        if (mTrackableBehaviour.TrackableName == "joker")
+        if (mTrackableBehaviour.TrackableName == "sundial")
         {
             npcItem = GameObject.Find("Item3");
         }
